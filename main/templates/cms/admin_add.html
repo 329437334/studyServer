@@ -1,0 +1,47 @@
+
+    <!--内容-->
+    <section class="content-header">
+        <h1>千禧微课管理系统</h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 管理员管理</a></li>
+            <li class="active">添加管理员</li>
+        </ol>
+    </section>
+    <section class="content" id="showcontent">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">添加管理员</h3>
+                    </div>
+                    <form role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="input_name">管理员名称</label>
+                                <input type="text" class="form-control" id="input_name" placeholder="请输入管理员名称！">
+                            </div>
+                            <div class="form-group">
+                                <label for="input_pwd">管理员密码</label>
+                                <input type="password" class="form-control" id="input_pwd" placeholder="请输入管理员密码！">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="input_type">管理员类型</label>
+                                <select class="form-control" id="input_type">
+                                    <option value="0">---请选择管理员所属类型---</option>
+                                    <option value="1">超级管理员</option>
+                                    <option value="２">普通管理员</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="box-footer">
+                            
+                            <input type="button" class="btn btn-primary" onclick="submit_admin()" value="添加"></input>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--内容-->

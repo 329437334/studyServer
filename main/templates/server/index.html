@@ -1,0 +1,134 @@
+{% extends 'server/pageframe.html' %}
+{% block title %}login pages{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+{% block content %}
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+
+    <title> My Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/pageframe.css') }}" /> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <!-- 内容 -->
+    <div>
+
+	<div class="main_banner">
+		<div class="main_banner_wrap">
+				<div class=" f-f0 f-cb u-mtitle">
+		   <div class="f-fr u-index-more">
+		   </div>
+		   <h1 class="f-c3 f-fl">热门课程</h1>
+	   </div>
+			<canvas id="myCanvas" width="150" height="150"></canvas>
+			<div class="main_banner_box" id="m_box">
+				<a href="javascript:void(0)" class="banner_btn js_pre">
+					<span class="banner_btn_arrow"><i></i></span>
+				</a>
+				<a href="javascript:void(0)" class="banner_btn btn_next js_next">
+					<span class="banner_btn_arrow"><i></i></span>
+				</a>
+				<ul>
+          {% for x in rollcover%}
+					<li id="imgCard{{loop.index-1}}">
+						<a href="/KCJieShao/{{x.course_id}}"><span style="opacity:0.4;"></span></a>
+						<img src="{{x.picture}}" alt="">
+						<p>{{x.slogan}}</p>
+					</li>
+				  {% endfor %}
+				</ul>
+				<!--火狐倒影图层-->
+				<p id="rflt"></p>
+			</div>
+			<div class="btn_list">
+				<span class="curr"></span><span></span><span></span><span></span><span></span>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/w.css') }}">
+<a name='anchorl2'></a>
+<div class="g-container open-pay" style="display: block;height: 650px;">
+    <div class=" f-f0 f-cb u-mtitle">
+        <div class="f-fr u-index-more">
+        </div>
+        <h1 class="f-c3 f-fl">付费课程</h1>
+    </div>
+    <div class="f-cb home-pay-list-container">
+        <div id="j-openPayList1" class="home-pay-list" style="display: block;">
+                {% for course in course_list %}
+                    <a href="/KCJieShao/{{course.id}}" class="f-db f-fl home-pay-list-item">
+                        <div class="home-pay-cover" style=""><img class="lazy" src="{{course.cover}}">
+                            <div class="home-pay-status">{{course.type}}</div>
+                            <div class="home-pay-coupon">{{course.end_time}}</div>
+                        </div>
+                        <div class="home-pay-info">
+                            <div class="home-pay-title">{{course.teacher}}</div>
+                            <div class="home-pay-subtitle">{{course.description}}</div>
+                        </div>
+                        <div class="home-pay-price"> ￥{{course.sale}}
+                            <del class="home-pay-price-ori"> 原价 ￥{{course.price}} </del>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div id="j-openPayList2" class="home-pay-list"></div>
+    </div>
+</div>
+<div class="g-container open-pay" style="display: block;height: 650px;">
+    <div class=" f-f0 f-cb u-mtitle">
+        <div class="f-fr u-index-more">
+        </div>
+        <h1 class="f-c3 f-fl">免费课程</h1>
+    </div>
+    <div class="f-cb home-pay-list-container">
+        <div id="j-openPayList1" class="home-pay-list" style="display: block;">
+                {% for course in free_course_list %}
+                    <a href="/KCJieShao/{{course.id}}" class="f-db f-fl home-pay-list-item">
+                        <div class="home-pay-cover" style=""><img class="lazy" src="{{course.cover}}">
+                            <div class="home-pay-status">{{course.type}}</div>
+                            <div class="home-pay-coupon">{{course.end_time}}</div>
+                        </div>
+                        <div class="home-pay-info">
+                            <div class="home-pay-title">{{course.teacher}}</div>
+                            <div class="home-pay-subtitle">{{course.description}}</div>
+                        </div>
+                        <div class="home-pay-price"> ￥{{course.sale}}
+                            <del class="home-pay-price-ori"> 原价 ￥{{course.price}} </del>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+            <div id="j-openPayList2" class="home-pay-list"></div>
+    </div>
+</div>
+
+    <div class=" f-f0 f-cb u-mtitle">
+        <div class="f-fr u-index-more">
+        </div>
+    </div>
+
+{% endblock %}
+<!--
+	</div>
+    /内容
+    底边
+
+</body>
+</html> -->
